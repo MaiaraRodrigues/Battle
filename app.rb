@@ -5,7 +5,7 @@ set :session_secret, 'super secret'
 class Battle < Sinatra::Base
 
   get '/' do
-    "Hello battle!"
+    "Testing infrastructure working!"
   end
 
 end
