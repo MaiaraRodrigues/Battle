@@ -5,8 +5,18 @@ set :session_secret, 'super secret'
 class Battle < Sinatra::Base
 
   get '/' do
-    "Testing infrastructure working!"
+    erb(:index)
   end
+
+  post '/names' do
+    @Player1_Name = params[:Player1_Name]
+    @Player2_Name = params[:Player2_Name]
+    erb(:play)
+  end
+
+  # get '/names' do
+  #   erb(:play)
+  # end
 
 end
 
