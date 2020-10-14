@@ -12,12 +12,16 @@ class Battle < Sinatra::Base
   post '/names' do
     session[:Player1_Name] = params[:Player1_Name]
     session[:Player2_Name] = params[:Player2_Name]
+    session[:Player1_HP] = 10
+    session[:Player2_HP] = 10
     redirect '/play'
   end
 
   get '/play' do
     @Player1_Name = session[:Player1_Name]
     @Player2_Name = session[:Player2_Name]
+    @Player1_HP = session[:Player1_HP]
+    @Player2_HP = session[:Player2_HP]
     erb :play
   end
 
